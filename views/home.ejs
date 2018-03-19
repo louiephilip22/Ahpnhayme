@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>menu</title>
+
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/goHome.js"></script>
+  </head>
+
+  <body>
+    <%- include('partials/_nav') %>
+
+    <main>
+      <h1 id="menu_list">MENU</h1>
+      <section id="menu">
+        <!-- MENU APPENDED HERE -->
+      </section>
+
+
+    </main>
+
+  <section class="cart-login-register">
+    <article id="cart" data-json="<%=cart%>">
+    </article>
+
+    <article id="login">
+      <h2>LOG IN</h2>
+      <form action="/users/login" method="POST">
+        <span>USERNAME: </span><input type="text" name="username">
+        <span>PASSWORD: </span><input type="password" name="password">
+        <input type="submit" value="LOGIN" class="btn btn-primary">
+        <p class="error_message"></p>
+      </form>
+      <span id="new">Don't have an account? Click me!!!</span>
+    </article>
+    <article id="register">
+      <h2>SIGN UP</h2>
+      <form action="/users/register" method="POST" class="login-form">
+        <span>USERNAME: </span><input type="text" name="username">
+        <span>PASSWORD: </span><input type="password" name="password">
+        <span>PHONE NUMBER: </span><input type="text" name="phone_number">
+        <input class="input_register" "btn btn-primary" type="submit" value="REGISTER">
+        <p class="error_message"></p>
+      </form>
+    </article>
+    <article id="specify_quantity">
+      <div class="center">
+      <span class="name"></span>
+      <span class="position qty"></span>
+      <button class="position plus">+</button>
+      <button class="position minus">-</button>
+      <button class="position add">Add To Cart</button>
+      <button class="position cancel">Cancel</button>
+    </div>
+    </article>
+  </section>
+  </body>
+</html>
